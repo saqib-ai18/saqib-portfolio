@@ -1,79 +1,59 @@
-# Mohammed Saqib — Portfolio
+Saqib — AI & Data Analytics Portfolio
 
-A responsive, dark, cyber-inspired personal portfolio built with React, Vite, Three.js, and React Three Fiber. It presents Mohammed Saqib's background, technical skills, selected projects, internship experience, résumé, and contact links in a single-page website.
+A personal portfolio website showcasing my background, technical skills, projects, internship experience, and contact information across AI/ML, data science, data analytics, and software development.
 
-🌐 Live website: https://saqib-portfolio-psi.vercel.app/
+🌐 Live portfolio: https://saqib-portfolio-psi.vercel.app/
 💻 GitHub repository: https://github.com/saqib-ai18/saqib-portfolio
+💼 LinkedIn: https://www.linkedin.com/in/saqib-kolkar-3222a6379/
+✉️ Email: saqibsaakii@gmail.com
 
 Table of Contents
 
-Project Overview
+Overview
 
 Features
 
 Technology Stack
 
-How the Website Works
-
 Project Structure
 
-Code Walkthrough
+Run Locally
 
-Run the Project Locally
+Available Scripts
 
 Build for Production
 
-Deploy on Vercel
+Deployment
 
 Customize the Portfolio
 
-Troubleshooting
+Current Project Cards
 
-Security Notes
+Contact
 
-Author
+Overview
 
-Project Overview
+This website is a responsive portfolio built with React and Vite. It uses a dark, cyber-inspired visual style with animated particle graphics, glowing accents, section reveals, and responsive layouts.
 
-This is a single-page React portfolio. Visitors can navigate between sections without opening separate pages:
-
-Hero — introduction, focus areas, résumé download, and calls to action.
-
-About — professional summary and education.
-
-Skills — data analytics, AI/machine learning, and development tools.
-
-Projects — selected project summaries and their technology stacks.
-
-Experience — Data Science internship details.
-
-Contact — email, LinkedIn, and GitHub links.
-
-The visual style uses a near-black background, cyan and violet highlights, subtle gradients, animated elements, and responsive layouts.
-
-Current implementation note: The portfolio is a front-end website. It does not currently include a backend, database, authentication system, or a working contact-form submission API. The project cards display project summaries; repository/demo links can be added when available.
+The portfolio includes a hero section with a résumé link, About, Skills, Projects, Experience, and Contact sections.
 
 Features
 
-Responsive single-page layout with section-based navigation.
+Responsive layout with mobile-specific styling.
 
-Dark cyber-inspired visual design.
+Interactive 3D particle scene built with Three.js and React Three Fiber.
 
-Animated Three.js scene with particles, holographic rings, nodes, and an energy orb.
+Particle effects, holographic rings, lighting, and interactive visual elements.
 
-Scroll-triggered reveal component for selected sections.
+Scroll reveal effects for selected content sections.
 
-Skills and project cards generated from JavaScript arrays.
+Dark cyber-inspired design with gradients and glowing accents.
 
 Résumé download from the public directory.
 
-Direct email, LinkedIn, and GitHub links.
+Contact links for email, LinkedIn, and GitHub.
 
-Smooth scrolling and hover transitions.
-
-Vite development server and production build workflow.
-
-Deployment-ready static output for Vercel or another static hosting provider.
+Mobile navigation menu.
 
 Technology Stack
 
@@ -81,420 +61,193 @@ Technology
 
 Purpose
 
-React 18
+React
 
-Builds the interface from reusable components.
+Component-based user interface
 
-Vite 6
+Vite
 
-Runs the local development server and bundles the production website.
+Development server and production build
 
 JavaScript (ES modules)
 
-Defines page content, state, and component behavior.
+Application logic
 
-CSS3
+HTML and CSS
 
-Controls layout, colours, typography, responsiveness, and transitions.
+Structure, styling, responsiveness, animations
 
 Three.js
 
-Provides the underlying 3D rendering engine.
+3D graphics
 
 React Three Fiber
 
-Lets the 3D scene be written using React components.
+React renderer for Three.js
 
 @react-three/drei
 
-Provides helpers such as point rendering/materials.
+Helpers for React Three Fiber
 
-Google Fonts
+Git and GitHub
 
-Loads Manrope and DM Mono typography.
+Version control and source hosting
 
 Vercel
 
-Hosts the deployed website.
-
-The exact dependency versions are recorded in package-lock.json; package.json defines the project's scripts and direct dependencies.
-
-How the Website Works
-
-The browser loads index.html, which contains the root HTML element and starts the JavaScript entry point at /src/main.jsx.
-
-The application then follows this sequence:
-
-index.html provides the HTML shell, page title, description, viewport settings, and font links.
-
-src/main.jsx imports React, the App component, and the global stylesheet. It mounts the application into the element with id="root".
-
-src/App.jsx builds the page layout and defines the portfolio content, navigation, skills, project summaries, experience, and contact links.
-
-src/ParticleScene.jsx renders the animated 3D visual using React Three Fiber and Three.js.
-
-src/Reveal.jsx uses the browser's IntersectionObserver API to add a reveal class when an element enters the viewport.
-
-src/index.css styles the page and defines the visual system, layout, animations, and responsive behavior.
-
-Vite serves the application during development and creates optimized static files in dist/ when you build for production.
-
-Data and rendering
-
-The skills, projects, and navItems arrays are defined near the top of src/App.jsx. React's .map() method renders those arrays into repeated cards, tags, and navigation links. This makes the content easier to update without duplicating the same markup.
-
-Navigation and state
-
-The navigation menu uses React's useState hook to track whether the mobile menu is open. Navigation links point to section IDs such as #about, #skills, and #contact. Selecting a navigation link closes the menu.
-
-3D animation
-
-ParticleScene.jsx creates a transparent WebGL canvas containing several visual elements:
-
-ParticleSphere: creates a field of points and animates its rotation and subtle pulse.
-
-EnergyOrb: displays a wireframe icosahedron with a pulsing scale.
-
-HolographicRings: renders three rotating torus rings with cyan and violet colours.
-
-AINodes: places small glowing nodes around the scene and rotates the group.
-
-Lighting: uses ambient and point lights to give the scene its neon appearance.
-
-Animation updates are performed with React Three Fiber's useFrame hook. Pointer movement also influences parts of the scene.
-
-Scroll reveals
-
-Reveal.jsx observes its wrapper element. When the element becomes visible in the viewport, it adds the reveal-visible class. The stylesheet controls the appearance of the reveal transition. The observer is disconnected when the component is unmounted.
-
-Styling
-
-src/index.css defines global styles and the page's visual design, including:
-
-CSS custom properties for background, panels, borders, muted text, cyan, and violet.
-
-Typography and heading sizes.
-
-Navigation, buttons, cards, tags, and section layouts.
-
-Gradient text, ambient glow effects, and the moving skills ticker.
-
-Hover effects and reveal transitions.
-
-Responsive breakpoints for smaller screens.
-
-The CSS file is the main place to adjust colours, spacing, typography, and layout.
+Deployment and hosting
 
 Project Structure
 
 saqib-portfolio/
 ├── public/
-│   ├── Saqib-Resume.pdf       # Downloadable résumé
-│   └── cyber-background.png   # Hero-section visual asset
+│   ├── Saqib-Resume.pdf
+│   └── cyber-background.png
 ├── src/
-│   ├── App.jsx                # Main page, content, and section layout
-│   ├── ParticleScene.jsx      # Three.js / React Three Fiber animation
-│   ├── Reveal.jsx             # Scroll-triggered reveal wrapper
-│   ├── TypingText.jsx         # Reusable rotating typewriter-text component
-│   ├── index.css              # Global styles and responsive design
-│   └── main.jsx               # React entry point
-├── .gitignore                 # Files Git should ignore
-├── index.html                 # HTML shell and page metadata
-├── package.json               # Project metadata, dependencies, and scripts
-├── package-lock.json          # Locked dependency tree
-└── README.md                  # Project documentation
+│   ├── App.jsx
+│   ├── index.css
+│   ├── ParticleScene.jsx
+│   ├── Reveal.jsx
+│   └── TypingText.jsx
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
 
-What each file does
+The exact file list may evolve. node_modules/ and dist/ are generated locally and should not be committed.
 
-File
+Main files
 
-Responsibility
+src/App.jsx — Main page layout, navigation, portfolio sections, skills and project data, and contact links.
 
-index.html
+src/index.css — Global styling, section layouts, visual effects, and responsive/mobile rules.
 
-Defines the page metadata, font imports, root element, and script entry point.
+src/ParticleScene.jsx — Three-dimensional particle and holographic visual scene.
 
-src/main.jsx
+src/Reveal.jsx — Scroll-based reveal wrapper used by selected sections.
 
-Mounts <App /> using React's createRoot and loads index.css.
+src/TypingText.jsx — Typing-text component available in the project.
 
-src/App.jsx
+public/Saqib-Resume.pdf — Résumé file linked from the hero section.
 
-Defines the main page, section navigation, skills, projects, internship, and contact links.
+public/cyber-background.png — Image used in the hero section.
 
-src/ParticleScene.jsx
-
-Builds the animated 3D scene and its components.
-
-src/Reveal.jsx
-
-Adds a viewport-triggered visibility class to wrapped content.
-
-src/TypingText.jsx
-
-Contains a typewriter effect that cycles through professional role titles. It is currently defined as a reusable component and is not imported by App.jsx.
-
-src/index.css
-
-Contains the visual design, layout rules, effects, transitions, and responsive styles.
-
-public/Saqib-Resume.pdf
-
-Static résumé file linked from the hero section.
-
-public/cyber-background.png
-
-Image displayed in the hero visual.
-
-package.json
-
-Lists direct dependencies and the dev, build, and preview commands.
-
-package-lock.json
-
-Helps npm install a consistent dependency tree.
-
-.gitignore
-
-Excludes configured files and folders from Git.
-
-Run the Project Locally
+Run Locally
 
 Prerequisites
 
-Install the following:
+Install a current version of Node.js and npm. Git is recommended if you plan to clone the repository.
 
-Node.js (Node.js 20 or a compatible supported version is recommended).
-
-npm, included with Node.js.
-
-Git, if you want to clone the repository.
-
-A code editor such as Visual Studio Code.
-
-Check that Node.js and npm are installed:
-
-node --version
-npm --version
-
-Option 1: Clone from GitHub
-
-Open a terminal and run:
+1. Clone the repository
 
 git clone https://github.com/saqib-ai18/saqib-portfolio.git
 cd saqib-portfolio
-npm install
-npm run dev
 
-Vite prints a local URL in the terminal, normally:
-
-http://localhost:5173
-
-Open that address in your browser. Keep the terminal running while you work.
-
-Option 2: Use an existing local project folder
-
-Open the saqib-portfolio folder in Visual Studio Code.
-
-Select Terminal → New Terminal.
-
-Run:
+2. Install dependencies
 
 npm install
+
+3. Start the development server
+
 npm run dev
 
-Open the local URL printed by Vite.
+Open the local address printed by Vite in the terminal (commonly http://localhost:5173/). Stop the server with Ctrl + C.
 
-Stop the development server
+Available Scripts
 
-Return to the terminal and press Ctrl + C.
+Command
 
-Build for Production
+Description
 
-Create an optimized production build:
+npm run dev
+
+Starts the local development server
 
 npm run build
 
-Vite writes the generated website to the dist/ directory.
+Creates the production build in dist/
+
+npm run preview
+
+Serves the production build locally for testing
+
+Build for Production
+
+Run a production build before deploying:
+
+npm run build
 
 To preview the production build locally:
 
 npm run preview
 
-Open the preview URL printed in the terminal. The preview command is for checking the built site; it does not deploy the website.
+Deployment
 
-Available npm scripts
+The portfolio is deployed on Vercel and connected to the GitHub repository. When the configured branch is pushed, Vercel can automatically build and deploy the latest commit.
 
-Command
+Push changes to GitHub
 
-What it does
+After editing and testing:
 
-npm run dev
+git status
+git add .
+git commit -m "Describe your changes"
+git push origin main
 
-Starts the Vite development server.
+Check the deployment status in Vercel. Once the deployment is marked Ready, open the live site and refresh it.
 
-npm run build
+Security reminders
 
-Creates the production build in dist/.
+Keep node_modules/, dist/, and local .env files out of Git.
 
-npm run preview
+Never commit API keys, access tokens, passwords, or other secrets.
 
-Serves the production build locally for review.
-
-Deploy on Vercel
-
-This is a Vite project, so configure the deployment as a Vite/static frontend project.
-
-Push the latest code to the main branch on GitHub.
-
-Sign in to Vercel and import the repository saqib-ai18/saqib-portfolio.
-
-Confirm the build settings:
-
-Setting
-
-Value
-
-Framework preset
-
-Vite
-
-Root directory
-
-./
-
-Install command
-
-npm install
-
-Build command
-
-npm run build
-
-Output directory
-
-dist
-
-Deploy the project.
-
-Open the deployment URL and test the navigation, image, résumé download, 3D scene, and contact links.
-
-No environment variables are currently required by the code described in this README. If a future feature introduces a backend or API credentials, configure the required variables in the hosting provider rather than committing secrets to Git.
+If deployment fails, inspect the Vercel build logs and run npm run build locally.
 
 Customize the Portfolio
 
-Most portfolio content is defined directly in src/App.jsx.
+Personal details and content
 
-1. Update your introduction
+Edit src/App.jsx to update the introduction, About section, experience, contact links, skills, and project descriptions.
 
-Find the hero section and update the heading, name, summary, location, and focus areas. Keep the text accurate to your real experience.
+Skills
 
-2. Update skills
+The skills are stored in the skills array near the top of src/App.jsx.
 
-At the top of src/App.jsx, find the skills array. Each group contains a label and an items array. Update these values to change the skill cards.
+Project cards
 
-3. Update projects
+The projects are stored in the projects array near the top of src/App.jsx. Each project currently includes number, type, title, description, stack, and mark.
 
-Find the projects array in src/App.jsx. Each project contains:
+To add a project, add another object using the same structure. The cards currently show summaries and technology tags; repository or live-demo links still need to be added to the project data and card markup if you want each card to link to a project.
 
-number — its display number.
+Résumé
 
-type — category or project area.
+Replace public/Saqib-Resume.pdf with your updated résumé, keeping the same filename if you want the existing download link to keep working.
 
-title — project name.
+Hero image
 
-description — short project summary.
+Replace public/cyber-background.png with your preferred image, keeping the same filename, or update its path in src/App.jsx.
 
-stack — technologies displayed as tags.
+Design and mobile layout
 
-mark — decorative symbol.
+Edit src/index.css. After changing responsive rules, test the site in desktop and mobile viewport sizes.
 
-The current cards are informational and do not automatically link to repositories or live demos. Add verified project URLs and link elements in the JSX if you want visitors to open the code or demo.
+Current Project Cards
 
-4. Update internship and education details
+AI Data Analyst Chatbot — A conversational analytics assistant for exploring datasets and asking natural-language questions. Technologies listed: Python, Streamlit, LangChain, Pandas, and Groq API.
 
-Edit the About and Experience sections in src/App.jsx. Ensure dates, company names, responsibilities, and qualifications are correct before publishing.
+Gymnastics SaaS Application — A full-stack application concept featuring backend APIs, structured data storage, and payment integration. Technologies listed: Django, React, PostgreSQL, REST APIs, AWS, and Docker.
 
-5. Update contact links
+Automated Defect Detection — A computer-vision project description focused on identifying defects and analyzing model results. Technologies listed: PyTorch, YOLO, NumPy, Matplotlib, and Django.
 
-In the Contact section of src/App.jsx, update the email, LinkedIn profile, and GitHub profile URLs. Test each link after editing.
+Project descriptions are summaries. Ensure they accurately describe the implementation and add repository or live-demo links when those are available.
 
-6. Replace the résumé
-
-Replace public/Saqib-Resume.pdf with your updated résumé, keeping the same filename so the existing download link continues to work. Alternatively, change the link in src/App.jsx to match the new filename.
-
-7. Replace the hero image
-
-Replace public/cyber-background.png with your chosen image, keeping the same filename, or update the image path in src/App.jsx.
-
-8. Change the design
-
-Edit src/index.css to adjust the colour variables, font sizes, spacing, backgrounds, transitions, and responsive layouts.
-
-9. Change the typewriter roles
-
-src/TypingText.jsx contains a titles array. Edit the role names there to change the text sequence. The component must also be imported and rendered in src/App.jsx before it will appear on the page.
-
-10. Verify before publishing
-
-After editing, run:
-
-npm run build
-
-Resolve any build errors, then test the site in a browser at desktop and mobile widths.
-
-Troubleshooting
-
-npm is not recognized
-
-Install Node.js, close and reopen the terminal, and run node --version and npm --version again.
-
-Dependencies are missing
-
-From the project root, run:
-
-npm install
-
-The local port is already in use
-
-Vite may offer another available port in the terminal. Open the exact URL it prints.
-
-The résumé does not download
-
-Confirm that the file exists at public/Saqib-Resume.pdf and that the link in src/App.jsx points to /Saqib-Resume.pdf.
-
-The hero image is missing
-
-Confirm that cyber-background.png exists in public/ and that the image path is /cyber-background.png.
-
-The 3D scene is not visible
-
-Check the browser console for WebGL or JavaScript errors, ensure the dependencies installed successfully, and try a browser with WebGL enabled. Rendering performance may vary by device.
-
-The website looks different after deployment
-
-Run npm run build locally and inspect the production build with npm run preview. Confirm that the hosting configuration uses npm run build and dist as the output directory.
-
-Security Notes
-
-Never commit passwords, API keys, access tokens, private keys, or other credentials.
-
-Do not upload private personal documents unless you intend to make them publicly accessible. Files in the public/ directory of this site are served as public assets.
-
-The current portfolio is a front-end site and does not securely store or process contact-form submissions.
-
-Review project descriptions and external links before publishing.
-
-Author
+Contact
 
 Mohammed Saqib
-AI & Machine Learning graduate interested in data analytics, data science, machine learning, and AI-powered applications.
-
-Portfolio: https://saqib-portfolio-psi.vercel.app/
-
+Email: saqibsaakii@gmail.com
+LinkedIn: https://www.linkedin.com/in/saqib-kolkar-3222a6379/
 GitHub: https://github.com/saqib-ai18
 
-LinkedIn: https://www.linkedin.com/in/saqib-kolkar-3222a6379/
-
-Email: saqibsaakii@gmail.com
-
+Made with curiosity and a focus on AI, data, and useful software.

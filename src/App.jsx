@@ -181,7 +181,6 @@ function App() {
               </article>
             ))}
           </div>
-          <p className="project-footnote"><span>NOTE</span> Project descriptions are concise summaries. Add your repository or live-demo links to each card when ready.</p>
           </Reveal>
         </section>
 
@@ -210,17 +209,20 @@ function App() {
 
         <section className="contact-section" id="contact">
           <div className="section-wrap contact-inner">
-            <span className="section-index">05 / YOUR NEXT MOVE</span>
+            <span className="section-index">05 / LET'S CONNECT</span>
             <div className="contact-layout">
               <div><h2>Have a problem<br />worth <span className="gradient-text">solving?</span></h2><p>I’m open to entry-level opportunities in data analytics, data science, and AI/ML. Let’s connect.</p></div>
               <div className="contact-actions">
-                <a
+<a
   className="contact-link"
   href="https://mail.google.com/mail/?view=cm&fs=1&to=saqibsaakii@gmail.com"
   target="_blank"
   rel="noreferrer"
 >
-  <span>EMAIL ME</span>
+  <span>
+    EMAIL ME
+    <small>saqibsaakii@gmail.com</small>
+  </span>
   <ArrowUpRight />
 </a>
                 <a className="contact-link" href="https://www.linkedin.com/in/saqib-kolkar-3222a6379/" target="_blank" rel="noreferrer"><span>LINKEDIN <small>https://www.linkedin.com/in/saqib-kolkar-3222a6379/</small></span><ArrowUpRight /></a>
