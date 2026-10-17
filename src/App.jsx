@@ -16,8 +16,9 @@ const projects = [
     number: '01',
     type: 'GENERATIVE AI · DATA ANALYTICS',
     title: 'AI Data Analyst Chatbot',
+    liveUrl: 'https://ai-data-analyst-vbxursw8daupwmytt9ddz6.streamlit.app/',
     description: 'A conversational analytics assistant designed to help users explore datasets and get insights through natural-language questions.',
-    stack: ['Python', 'Streamlit', 'LangChain', 'Pandas', 'Groq API'],
+    stack: ['Python', 'Streamlit', 'LangChain', 'Pandas', 'nemotron 3 ultra'],
     mark: '✳',
   },
   {
@@ -175,7 +176,33 @@ function App() {
                   <span className="project-type">{project.type}</span>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                  <div className="tag-list">{project.stack.map(item => <span className="tag" key={item}>{item}</span>)}</div>
+                  <div className="tag-list">
+  {project.stack.map(item => (
+    <span className="tag" key={item}>{item}</span>
+  ))}
+</div>
+
+{project.liveUrl && (
+  <a
+    href={project.liveUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: 'inline-block',
+      marginTop: '16px',
+      padding: '10px 16px',
+      backgroundColor: '#72e4e9',
+      color: '#101426',
+      textDecoration: 'none',
+      borderRadius: '6px',
+      fontWeight: 700,
+      position: 'relative',
+      zIndex: 10,
+    }}
+  >
+    View Live Demo ↗
+  </a>
+)}
                 </div>
                 <span className="project-arrow" aria-hidden="true">↗</span>
               </article>
